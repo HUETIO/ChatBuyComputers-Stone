@@ -122,3 +122,57 @@
 .inventory-form-container button:hover {
   background-color: #21a1f1;
 }
+
+/* Estilos para checkboxes y acciones múltiples */
+.bulk-actions {
+  margin: 15px 0;
+  padding: 10px;
+  background: #fff3f3;
+  border: 1px solid #ffd6d6;
+  border-radius: 5px;
+  display: flex;
+  gap: 10px;
+}
+
+.delete-selected-btn {
+  background: #ff4444;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.delete-selected-btn:hover {
+  background: #cc0000;
+}
+
+.computer-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.edit-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1em;
+  padding: 5px;
+}
+
+/* Estado indeterminado para checkbox */
+input[type="checkbox"]:indeterminate {
+  background: #007bff;
+  border-color: #007bff;
+}
+
+/* Efecto hover para filas */
+tr:hover {
+  background-color: #f8f9fa;
+}

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import InventoryForm from './components/InventoryForm';
 import InventoryList from './components/InventoryList';
 import TextInput from './components/TextInput';
@@ -15,17 +17,41 @@ function App() {
 
   // Cargar computadoras desde el backend
   useEffect(() => {
-    const fetchComputadoras = async () => {
-      try {
-        const response = await axios.get('http://localhost:8000/api/computers/');
-        setComputadoras(response.data);
-      } catch (error) {
-        console.error('Error fetching computadoras:', error);
-      }
-    };
+// En el useEffect de carga inicial:
+const fetchComputadoras = async () => {
+  try {
+    const response = await axios.get('http://localhost:8000/api/computers/');
+    const data = response.data.map(comp => ({
+      ...comp,
+      precio: parseFloat(comp.precio),
+      cantidad: parseInt(comp.cantidad)
+    }));
+    setComputadoras(data);
+  } catch (error) {
+    console.error('Error fetching computadoras:', error);
+    toast.error('Error al cargar el inventario');
+  }
+};
 
     fetchComputadoras();
   }, []);
+
+  const handleDeleteComputer = async (ids) => {
+    try {
+      await Promise.all(
+        ids.map(id => 
+          axios.delete(`http://localhost:8000/api/computers/${id}/`)
+        )
+      );
+      
+      setComputadoras(prev => prev.filter(c => !ids.includes(c.id)));
+      toast.success(`${ids.length} elementos eliminados correctamente`);
+      
+    } catch (error) {
+      console.error('Error eliminando computadoras:', error);
+      toast.error('Error al eliminar los elementos seleccionados');
+    }
+  };
 
   // Función para actualizar una computadora
   const updateComputer = async (updatedComputer) => {
@@ -80,6 +106,7 @@ function App() {
 
   return (
     <div className="App">
+      <ToastContainer position="top-right" autoClose={3000} />
       <header className="App-header">
         <h1>ChatBuyComputers</h1>
         
@@ -94,6 +121,7 @@ function App() {
         <InventoryList 
           computadoras={computadoras} 
           onUpdateComputer={updateComputer} 
+          onDeleteComputer={handleDeleteComputer}  // ← Esta línea faltaba
         />
         
         <TextInput onSendText={handleSendText} />
