@@ -1,75 +1,130 @@
+/* App.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  padding: 20px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: linear-gradient(135deg, #2c3e50, #bdc3c7);
+
+
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: white;
+  margin-bottom: 20px;
 }
 
-.App-link {
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el formulario */
+
+/* Estilos para la lista de inventario */
+.InventoryList {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.InventoryList ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.InventoryList li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.InventoryList li:last-child {
+  border-bottom: none;
+}
+
+img {
+  max-width: 200px; /* Limita el ancho máximo de las imágenes */
+  height: auto; /* Mantén la proporción */
+  border-radius: 8px; /* Bordes redondeados para un aspecto más suave */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+}
+table {
+  width: 100%; /* Asegura que la tabla ocupe todo el ancho del contenedor */
+  border-collapse: collapse; /* Elimina los espacios entre las celdas */
+  margin-bottom: 20px; /* Espacio adicional debajo de la tabla */
+  background: linear-gradient(135deg, #333, #ddd); /* Transición de gris oscuro a gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden; /* Asegura que el contenido respete los bordes */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+td, th {
+  padding: 12px 15px; /* Espaciado interno en celdas */
+  text-align: left; /* Alinea el contenido a la izquierda */
+  border-bottom: 1px solid #ddd; /* Línea divisoria entre filas */
+}
+
+th {
+  background-color: #282c34; /* Color de fondo del encabezado */
+  color: white; /* Texto blanco para contraste */
+  font-weight: bold; /* Resalta los encabezados */
+}
+
+tr:hover {
+  background-color: #444; /* Un gris más intenso y atractivo */
+  color: #f5f5f5; /* Texto ligeramente más claro para contraste */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efecto de sombra al pasar el ratón */
+}
+
+
+/* Estilos para la respuesta de la IA */
+.ai-response {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  text-align: left;
+}
+
+.ai-response p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Estilos para el mensaje de carga */
+.loading {
+  font-size: 1.2rem;
   color: #61dafb;
+  margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.App {
-  text-align: center;
-}
+/* Estilos para el botón de enviar */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.send-button {
+  background-color: #61dafb;
   color: white;
-}
-
-input[type=text] {
-  width: 300px;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  background-color: #4CAF50;
   border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+  padding: 10px 20px;
   border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.send-button:hover {
+  background-color: #21a1f1;
 }

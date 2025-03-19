@@ -1,0 +1,75 @@
+/* InventoryForm.css */
+
+.inventory-form-container {
+    background-color: rgba(255, 0, 0, 0.5); /* Rojo con opacidad del 50% */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: table;               /* Usar grid para un diseño de formulario más estructurado */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
+    gap: 15px;                    /* Espacio entre los elementos del grid */
+  }
+  
+  .inventory-form-container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;               /* Cada etiqueta ocupa su propia línea */
+  }
+  
+  .inventory-form-container input[type="text"],
+  .inventory-form-container input[type="number"],
+  .inventory-form-container textarea,
+  .inventory-form-container select {
+    width: 100%;                  /* Ocupar todo el ancho de la celda del grid */
+    padding: 1px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    box-sizing: border-box;      /* Incluir el padding y el borde en el ancho total */
+  }
+  
+  .inventory-form-container textarea {
+    resize: vertical;            /* Permitir ajustar la altura del textarea */
+  }
+  
+  .inventory-form-container button {
+    background-color: #61dafb;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    grid-column: 1 / -1;         /* El botón ocupa todo el ancho del grid */
+    margin-top: 20px;
+  }
+  
+  .inventory-form-container button:hover {
+    background-color: #21a1f1;
+  }
+  
+  .inventory-form-container img {
+      max-width: 30%;  /* Asegura que la imagen no se desborde del contenedor */
+      height: auto;     /* Mantiene la proporción original de la imagen */
+      margin-top: 10px; /* Espacio arriba de la imagen */
+      border-radius: 4px; /* Bordes redondeados para la imagen */
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); /* Sutil sombra */
+  }
+  
+  /* Estilo para el selector de computadora */
+  .computer-selector {
+      margin-bottom: 20px; /* Espacio debajo del selector */
+  }
+  
+  .computer-selector select {
+      width: 100%; /* El selector ocupa todo el ancho disponible */
+      padding: 10px; /* Relleno para hacerlo más fácil de usar */
+      border: 1px solid #ccc; /* Borde sutil */
+      border-radius: 4px; /* Bordes redondeados */
+      font-size: 1rem; /* Tamaño de fuente legible */
+      box-sizing: border-box; /* Incluir el relleno y el borde en el ancho total */
+  }
+  
