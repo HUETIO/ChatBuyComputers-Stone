@@ -1,15 +1,20 @@
 /* InventoryForm.css */
 
 .inventory-form-container {
-    background-color: rgba(255, 0, 0, 0.5); /* Rojo con opacidad del 50% */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    display: table;               /* Usar grid para un diseño de formulario más estructurado */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
-    gap: 15px;                    /* Espacio entre los elementos del grid */
-  }
+  background: linear-gradient(135deg, #2c3e50, #bdc3c7);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out, transform 0.5s ease-in-out;
+  opacity: 1; /* Asegurar que se muestre */
+  max-height: 1000px; /* Ajusta según sea necesario */
+  transform: translateY(0);
+  overflow: visible; /* Permitir contenido dentro */
+}
   
   .inventory-form-container label {
     font-weight: bold;
@@ -72,4 +77,48 @@
       font-size: 1rem; /* Tamaño de fuente legible */
       box-sizing: border-box; /* Incluir el relleno y el borde en el ancho total */
   }
-  
+/* Animación de ocultar/mostrar */
+.inventory-form-container {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out, transform 0.5s;
+}
+
+.inventory-form-container.show {
+  opacity: 1;
+  max-height: 800px; /* Ajusta según sea necesario */
+  overflow: visible;
+  transform: translateY(0);
+}
+
+/* Ajustes de inputs y botones */
+.inventory-form-container input,
+.inventory-form-container select,
+.inventory-form-container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.inventory-form-container button {
+  background-color: #61dafb;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+  grid-column: 1 / -1;
+  margin-top: 20px;
+}
+
+.inventory-form-container button:hover {
+  background-color: #21a1f1;
+}

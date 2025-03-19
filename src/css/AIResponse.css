@@ -1,0 +1,42 @@
+/* Estilos mejorados para la respuesta de la IA */
+.ai-response {
+    text-align: left;
+    background: linear-gradient(135deg, #bdc3c7, #2c3e50); /* Gradiente oscuro y sofisticado */
+    color: white; /* Texto blanco para alto contraste */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-left: 4px solid #4e638e; /* Línea decorativa azulada */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.ai-response:hover {
+    transform: scale(1.02); /* Ligera ampliación al pasar el cursor */
+    background: linear-gradient(135deg, #34495e, #ecf0f1); /* Gradiente dinámico al interactuar */
+}
+
+
+/* Estilo adicional para el texto */
+.ai-response p {
+    margin: 0;
+    font-size: 1rem; /* Tamaño de fuente ligeramente reducido para mayor elegancia */
+    line-height: 1.6; /* Mejor separación entre líneas */
+    color: #333; /* Texto en gris oscuro para mayor legibilidad */
+}
+
+/* Opcional: Animación al aparecer */
+.ai-response {
+    animation: fadeIn 0.4s ease-in-out; /* Añade un toque animado */
+}
+
+/* Definición de la animación */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

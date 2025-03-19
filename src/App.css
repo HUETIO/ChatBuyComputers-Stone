@@ -27,6 +27,17 @@ h1 {
   margin-bottom: 20px;
 }
 
+/* App.css */
+.react-markdown strong {
+  font-weight: bold;
+  color: #61dafb; /* Cambia el color de las negritas */
+}
+
+.react-markdown p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
 /* Estilos para el formulario */
 
 /* Estilos para la lista de inventario */
@@ -89,21 +100,7 @@ tr:hover {
 }
 
 
-/* Estilos para la respuesta de la IA */
-.ai-response {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-  text-align: left;
-}
 
-.ai-response p {
-  margin: 0;
-  font-size: 1.1rem;
-  line-height: 1.5;
-}
 
 /* Estilos para el mensaje de carga */
 .loading {

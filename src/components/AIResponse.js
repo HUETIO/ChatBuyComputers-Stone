@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/AIResponse.css';
 
 function AIResponse({ response }) {
   return (
