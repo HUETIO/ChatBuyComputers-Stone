@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import InventoryForm from './components/InventoryForm';
 import InventoryList from './components/InventoryList';
 import TextInput from './components/TextInput';
+import Dashboard from './components/Dashboard';
 import './App.css';
 import './css/AIResponse.css';
 
@@ -33,8 +34,8 @@ const fetchComputadoras = async () => {
   }
 };
 
-    fetchComputadoras();
-  }, []);
+fetchComputadoras();
+}, []);
 
   const handleDeleteComputer = async (ids) => {
     try {
@@ -109,6 +110,11 @@ const fetchComputadoras = async () => {
       <ToastContainer position="top-right" autoClose={3000} />
       <header className="App-header">
         <h1>ChatBuyComputers</h1>
+        <div>
+          <h1>Inventario de Computadoras</h1>
+          <Dashboard computadoras={computadoras} />
+          <ToastContainer />
+        </div>
         
         <button onClick={() => setShowForm(!showForm)}>
           {showForm ? "Ocultar formulario" : "Mostrar formulario"}

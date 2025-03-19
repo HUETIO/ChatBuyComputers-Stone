@@ -72,10 +72,8 @@ function InventoryList({ computadoras, onUpdateComputer, onDeleteComputer }) {
 
   return (
     <div>
-      <h2>Inventario de Computadoras</h2>
-      <button onClick={handleDeleteSelected} disabled={selectedComputers.length === 0}>
-        Eliminar seleccionados ❌
-      </button>
+      <h2>🚀 Inventario de Computadoras 🚀</h2>
+
       <table className="inventory-table">
         <thead>
           <tr>
@@ -145,10 +143,17 @@ function InventoryList({ computadoras, onUpdateComputer, onDeleteComputer }) {
                   <button onClick={() => handleEditClick(computadora)}>Editar ✏️</button>
                 )}
               </td>
+              
             </tr>
+            
           ))}
+
         </tbody>
+        <button onClick={handleDeleteSelected} disabled={selectedComputers.length === 0}>
+        Eliminar ❌
+      </button>
       </table>
+      
     </div>
   );
 }
